@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "vite-ssg build"
+    "build": "vite-ssg build",
+    "test:e2e": "cypress open"
   },
   "license": "ISC",
   "dependencies": {
