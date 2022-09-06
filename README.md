@@ -8,6 +8,7 @@ Using:
 - typescript
 - cypress
 - vitest
+- contentful (for content managment)
 
 This is a re-write of my personal website that was made with Vue 2 and Vuetify.
 

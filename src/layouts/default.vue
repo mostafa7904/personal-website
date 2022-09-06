@@ -10,7 +10,7 @@
 main {
   padding: 50px;
   @media screen and (max-width: map-get($map: $display-breakpoints, $key: 'sm')) {
-    padding: 35px;
+    padding: 20px;
   }
 }
 </style>
