@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "target": "ESNext",
+    "target": "esnext",
+    "module": "esnext",
     "jsx": "preserve",
     "strict": true,
     "esModuleInterop": true,
@@ -11,7 +12,7 @@
     "strictNullChecks": true,
     "allowJs": true,
     "forceConsistentCasingInFileNames": true,
-    "types": ["vitest"],
+    "types": ["vitest", "vite/client"],
     "lib": ["esnext", "dom"]
   },
   "include": [

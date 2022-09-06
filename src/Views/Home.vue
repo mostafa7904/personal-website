@@ -1,7 +1,14 @@
 <script setup lang="ts">
 import { useHead } from '@vueuse/head'
 import ProjectItem from '@/components/app/ProjectItem/ProjectItem.vue'
-import { Project } from 'src/types/Projects/project'
+import { useProjectsStore } from '../stores/projects'
+// import { onServerPrefetch } from 'vue'
+
+const store = useProjectsStore()
+
+// onServerPrefetch(async () => {
+store.getProjects()
+// })
 
 interface Links {
   icon: string
@@ -39,37 +46,6 @@ const links: Array<Links> = [
     icon: 'icons/medium.svg',
     title: 'Medium',
     url: 'https://medium.com'
-  }
-]
-
-const projects: Array<Project> = [
-  {
-    title: 'My project',
-    description:
-      'Vue - Built with the lastest stable version of Vue 2, Tailwind - Using tailwind',
-    image: 'https://mostafa-rahmati.ir/img/pricing.bb81dac4.webp',
-    stack: ['Vue', 'Typescript', 'Tailwind']
-  },
-  {
-    title: 'My project',
-    description:
-      'Vue - Built with the lastest stable version of Vue 2, Tailwind - Using tailwind',
-    image: 'https://mostafa-rahmati.ir/img/spotify_clone.076a81fb.webp',
-    stack: ['Vue', 'Typescript', 'Tailwind']
-  },
-  {
-    title: 'My project',
-    description:
-      'Vue - Built with the lastest stable version of Vue 2, Tailwind - Using tailwind',
-    image: 'https://mostafa-rahmati.ir/img/ideato.9c6d3eb3.webp',
-    stack: ['Vue', 'Typescript', 'Tailwind']
-  },
-  {
-    title: 'My project',
-    description:
-      'Vue - Built with the lastest stable version of Vue 2, Tailwind - Using tailwind',
-    image: 'https://mostafa-rahmati.ir/img/pricing.bb81dac4.webp',
-    stack: ['Vue', 'Typescript', 'Tailwind']
   }
 ]
 
@@ -123,7 +99,7 @@ useHead({
       <h2>Stuff I made</h2>
       <div class="projects">
         <ProjectItem
-          v-for="(project, key) in projects"
+          v-for="(project, key) in store.$state.projects"
           :key="key"
           :project="project"
         >
