@@ -2,21 +2,39 @@
 
 body,
 html {
+  font-family: $font-family;
   background: map-get($map: $colors, $key: 'bg');
   color: map-get($map: $colors, $key: 'text-color');
   font-size: $root-font-size;
-  @media screen and (max-width: map-get($map: $display-breakpoints, $key: 'md')) {
-    font-size: $root-font-size - 1;
-  }
-  @media screen and (max-width: map-get($map: $display-breakpoints, $key: 'sm')) {
-    font-size: $root-font-size - 2;
-  }
   ::selection {
     background-color: #92b4ff;
     color: white;
   }
   ::-moz-selection {
     background-color: #92b4ff;
+  }
+  @media screen and (max-width: map-get($map: $display-breakpoints, $key: 'md')) {
+    font-size: $root-font-size - 1;
+  }
+  @media screen and (max-width: map-get($map: $display-breakpoints, $key: 'sm')) {
+    font-size: $root-font-size - 2;
+  }
+  /* In smaller devices the scrollbar is hidden by default */
+  @media screen and (min-width: map-get($map: $display-breakpoints, $key: 'sm')) {
+    ::-webkit-scrollbar {
+      width: 6px;
+      background-color: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #d8dcde;
+      border-radius: 4.5px;
+    }
+    ::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
+    scrollbar-color: #d8dcde;
+    scrollbar-track-color: transparent;
+    scrollbar-width: 6px;
   }
 }
 
@@ -54,6 +72,7 @@ h6 {
 
 p {
   font-size: 0.9rem;
+  font-weight: 500;
 }
 
 section {
