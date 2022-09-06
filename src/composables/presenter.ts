@@ -4,12 +4,9 @@ export function useContentfulPresenter<T>(
   _entries: EntryCollection<T>,
   assetFieldName: string = 'image'
 ): T[][] {
-  const assets: Asset[] = _entries.includes?.Asset
-  if (!assets) return [_entries.items.map(v => v.fields)]
-
-  const entries = _entries.items.map((entry, index) => {
+  const entries = _entries.items.map(entry => {
     const fields = entry.fields as any
-    fields[assetFieldName] = assets[index].fields.file.url
+    fields[assetFieldName] = (fields[assetFieldName] as Asset).fields.file.url
     return fields
   })
   return [entries]

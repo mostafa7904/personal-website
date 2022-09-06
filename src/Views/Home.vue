@@ -127,7 +127,7 @@ useHead({
   position: relative;
   display: grid;
   width: 100%;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   grid-row-gap: 35px;
   grid-template-rows: auto;
   grid-gap: 30px;
