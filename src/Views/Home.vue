@@ -20,32 +20,32 @@ const links: Array<Links> = [
   {
     icon: 'icons/github.svg',
     title: 'Github',
-    url: 'https://github.com'
+    url: 'https://github.com/mostafa7904'
   },
   {
     icon: 'icons/linkedin.svg',
     title: 'LinkedIn',
-    url: 'https://linkedin.com'
+    url: 'https://www.linkedin.com/in/mostafa-rahmati-717470180/'
   },
   {
     icon: 'icons/twitter.svg',
     title: 'Twitter',
-    url: 'https://twitter.com'
+    url: 'https://twitter.com/mosy7904'
   },
   {
     icon: 'icons/stack-over-flow.svg',
     title: 'StackOverFlow',
-    url: 'https://stackoverflow.com'
+    url: 'https://stackoverflow.com/users/11084093/mostafa-rahmati'
   },
   {
     icon: 'icons/gitlab.svg',
     title: 'Gitlab',
-    url: 'https://gitlab.com'
+    url: 'https://gitlab.com/mostafa7904'
   },
   {
     icon: 'icons/medium.svg',
     title: 'Medium',
-    url: 'https://medium.com'
+    url: 'https://medium.com/@mostafa7904'
   }
 ]
 
