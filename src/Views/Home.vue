@@ -2,13 +2,13 @@
 import { useHead } from '@vueuse/head'
 import ProjectItem from '@/components/app/ProjectItem/ProjectItem.vue'
 import { useProjectsStore } from '../stores/projects'
-// import { onServerPrefetch } from 'vue'
+import { onServerPrefetch } from 'vue'
 
 const store = useProjectsStore()
 
-// onServerPrefetch(async () => {
-store.getProjects()
-// })
+onServerPrefetch(async () => {
+  await store.getProjects()
+})
 
 interface Links {
   icon: string
