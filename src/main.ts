@@ -7,7 +7,10 @@ import { createPinia } from 'pinia'
 import './assets/css/normalize.css'
 import './assets/scss/overwrites.scss'
 
-export const createApp = ViteSSG(App, { routes }, ({ app }) => {
+export const createApp = ViteSSG(App, { routes }, ({ app, initialState }) => {
   const pinia = createPinia()
   app.use(pinia)
+
+  if (import.meta.env.SSR) initialState.pinia = pinia.state.value
+  else pinia.state.value = initialState.pinia || {}
 })
