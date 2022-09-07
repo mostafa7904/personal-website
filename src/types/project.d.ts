@@ -8,6 +8,9 @@ export declare interface ProjectEntry {
   title: string
   link: string
   description: string
+  sourceLink: string
+  sourceType: SourceTypes
+  tags: string[]
 }
 
 export declare interface Project {
@@ -16,4 +19,12 @@ export declare interface Project {
   title: string
   link: string
   description: string
+  sourceLink: string
+  sourceType: SourceTypes
+  tags: string[]
+}
+
+export enum SourceTypes {
+  GITHUB,
+  GITLAB
 }

@@ -127,10 +127,11 @@ useHead({
   position: relative;
   display: grid;
   width: 100%;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  grid-row-gap: 35px;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   grid-template-rows: auto;
-  grid-gap: 30px;
-  grid-column-gap: 35px;
+  grid-gap: 35px;
+  @media screen and (max-width: map-get($map: $display-breakpoints, $key: 'sm')) {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
 }
 </style>
