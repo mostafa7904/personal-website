@@ -13,7 +13,8 @@ export const useProjectsStore = defineStore('projects', {
       const [client] = useContentFul()
       const entriesRes: EntryCollection<ProjectEntry> = await client.getEntries(
         {
-          content_type: 'projects'
+          content_type: 'projects',
+          order: 'fields.order'
         }
       )
 
