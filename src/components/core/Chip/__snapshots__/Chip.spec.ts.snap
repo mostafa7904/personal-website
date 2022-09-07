@@ -1,0 +1,8 @@
+// Vitest Snapshot v1
+
+exports[`Chip.vue > should render correctly 1`] = `
+"<div class=\\"chip\\">
+  <div class=\\"chip__content\\">test</div>
+  <div class=\\"chip__gradient\\"></div>
+</div>"
+`;
