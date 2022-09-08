@@ -1,6 +1,6 @@
 import { acceptHMRUpdate, defineStore } from 'pinia'
-import { useContentFul } from '../composables/contentful'
-import { useContentfulPresenter } from '../composables/presenter'
+import { useContentFul } from '../composables/useContentFul'
+import { useContentfulPresenter } from '../composables/useContentfulPresenter'
 import type { ProjectEntry, Project } from '../types/project'
 import type { EntryCollection } from 'contentful'
 
