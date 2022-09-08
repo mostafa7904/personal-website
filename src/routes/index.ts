@@ -5,6 +5,6 @@ import Home from '../Views/Home.vue'
 export default [
   {
     path: '/',
-    component: Home
-  }
+    component: Home,
+  },
 ] as [RouteRecordRaw]

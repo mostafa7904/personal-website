@@ -5,23 +5,23 @@ import vue from '@vitejs/plugin-vue'
 export default defineConfig({
   plugins: [
     vue({
-      reactivityTransform: true
-    })
+      reactivityTransform: true,
+    }),
   ],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src')
-    }
+      '@': path.resolve(__dirname, './src'),
+    },
   },
   test: {
-    environment: 'happy-dom'
+    environment: 'happy-dom',
   },
   ssgOptions: {
     script: 'async',
-    formatting: 'minify'
+    formatting: 'minify',
   },
   server: {
     port: 3000,
-    host: '127.0.0.1'
-  }
+    host: '127.0.0.1',
+  },
 })

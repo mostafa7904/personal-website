@@ -1,12 +1,12 @@
 import { acceptHMRUpdate, defineStore } from 'pinia'
+import type { EntryCollection } from 'contentful'
+import type { ProjectEntry, Project } from '../types/project'
 import { useContentFul } from '../composables/useContentFul'
 import { useContentfulPresenter } from '../composables/useContentfulPresenter'
-import type { ProjectEntry, Project } from '../types/project'
-import type { EntryCollection } from 'contentful'
 
 export const useProjectsStore = defineStore('projects', {
   state: (): ProjectsState => ({
-    projects: []
+    projects: [],
   }),
   actions: {
     async getProjects() {
@@ -14,16 +14,16 @@ export const useProjectsStore = defineStore('projects', {
       const entriesRes: EntryCollection<ProjectEntry> = await client.getEntries(
         {
           content_type: 'projects',
-          order: 'fields.order'
-        }
+          order: 'fields.order',
+        },
       )
 
       const [entries]: any = useContentfulPresenter<ProjectEntry>(entriesRes)
       this.$patch({
-        projects: entries
+        projects: entries,
       })
-    }
-  }
+    },
+  },
 })
 
 interface ProjectsState {

@@ -5,13 +5,13 @@ import { Project, SourceTypes } from '../../../types/project.d'
 interface Props {
   project: Project
 }
-const { project } = defineProps<Props>()
+const props = defineProps<Props>()
 </script>
 
 <template>
   <div class="project-card">
     <img
-      :src="project.image"
+      :src="props.project.image"
       :alt="project.title"
       class="project-card__image"
       loading="lazy"
@@ -19,10 +19,14 @@ const { project } = defineProps<Props>()
     <div class="project-card__content">
       <div class="project-card__title">
         <h3>
-          {{ project.title }}
+          {{ props.project.title }}
         </h3>
         <div class="project-card__links">
-          <a class="project-card__link" :href="project.link">
+          <a
+            :href="props.project.link"
+            class="project-card__link"
+            target="_blank"
+          >
             <img
               width="20"
               src="icons/external-link.svg"
@@ -30,13 +34,16 @@ const { project } = defineProps<Props>()
             />
           </a>
           <a
-            v-if="project.sourceLink !== '#'"
-            :href="project.sourceLink"
+            v-if="props.project.sourceLink !== '#'"
+            :href="props.project.sourceLink"
+            target="_blank"
             class="project-card__link"
           >
             <img
               :src="`icons/${
-                project.sourceType === SourceTypes.GITHUB ? 'github' : 'gitlab'
+                props.project.sourceType === SourceTypes.GITHUB
+                  ? 'github'
+                  : 'gitlab'
               }.svg`"
               width="20"
               alt="link to source"
@@ -45,11 +52,13 @@ const { project } = defineProps<Props>()
         </div>
       </div>
 
-      <p class="project-card__description">{{ project.description }}</p>
+      <p class="project-card__description">
+        {{ props.project.description }}
+      </p>
 
       <div class="project-card__tags">
         <Chip
-          v-for="(tag, key) in project.tags"
+          v-for="(tag, key) in props.project.tags"
           :key="key"
           style="margin-right: 6px"
         >

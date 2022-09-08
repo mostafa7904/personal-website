@@ -4,7 +4,7 @@ import Chip from './Chip.vue'
 
 const mountFunction = (options?: MountingOptions<any>) => {
   return mount(Chip, {
-    ...options
+    ...options,
   })
 }
 
@@ -16,8 +16,8 @@ describe('Chip.vue', () => {
   it('should render correctly', () => {
     const wrapper = mountFunction({
       slots: {
-        default: 'test'
-      }
+        default: 'test',
+      },
     })
     expect(wrapper.html()).toMatchSnapshot()
   })

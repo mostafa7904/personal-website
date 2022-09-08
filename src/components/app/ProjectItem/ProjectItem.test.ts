@@ -4,7 +4,7 @@ import ProjectItem from './ProjectItem.vue'
 
 const mountFunction = (options?: MountingOptions<any>) => {
   return mount(ProjectItem, {
-    ...options
+    ...options,
   })
 }
 
@@ -13,9 +13,9 @@ describe('ProjectItem.vue', () => {
     const wrapper = mountFunction({
       props: {
         project: {
-          title: 'Mostafa'
-        }
-      }
+          title: 'Mostafa',
+        },
+      },
     })
     expect(wrapper.text()).toBe('Mostafa')
   })

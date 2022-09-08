@@ -2,13 +2,13 @@
 import { useHead } from '@vueuse/head'
 import ProjectItem from '@/components/app/ProjectItem/ProjectItem.vue'
 import { useProjectsStore } from '../stores/projects'
-import { onServerPrefetch } from 'vue'
+// import { onServerPrefetch } from 'vue'
 
 const store = useProjectsStore()
 
-onServerPrefetch(async () => {
-  await store.getProjects()
-})
+// onServerPrefetch(async () => {
+store.getProjects()
+// })
 
 interface Links {
   icon: string
@@ -20,43 +20,44 @@ const links: Array<Links> = [
   {
     icon: 'icons/github.svg',
     title: 'Github',
-    url: 'https://github.com/mostafa7904'
+    url: 'https://github.com/mostafa7904',
   },
   {
     icon: 'icons/linkedin.svg',
     title: 'LinkedIn',
-    url: 'https://www.linkedin.com/in/mostafa-rahmati-717470180/'
+    url: 'https://www.linkedin.com/in/mostafa-rahmati-717470180/',
   },
   {
     icon: 'icons/twitter.svg',
     title: 'Twitter',
-    url: 'https://twitter.com/mosy7904'
+    url: 'https://twitter.com/mosy7904',
   },
   {
     icon: 'icons/stack-over-flow.svg',
     title: 'StackOverFlow',
-    url: 'https://stackoverflow.com/users/11084093/mostafa-rahmati'
+    url: 'https://stackoverflow.com/users/11084093/mostafa-rahmati',
   },
   {
     icon: 'icons/gitlab.svg',
     title: 'Gitlab',
-    url: 'https://gitlab.com/mostafa7904'
+    url: 'https://gitlab.com/mostafa7904',
   },
   {
     icon: 'icons/medium.svg',
     title: 'Medium',
-    url: 'https://medium.com/@mostafa7904'
-  }
+    url: 'https://medium.com/@mostafa7904',
+  },
 ]
 
 useHead({
   title: 'Mostafa Rahmati | Full-stack developer',
   meta: [
     {
-      name: `description`,
-      content: `I am Mostafa Rahmati, a Full-stack developer with four years of exprience`
-    }
-  ]
+      name: 'description',
+      content:
+        'I am Mostafa Rahmati, a Full-stack developer with four years of exprience',
+    },
+  ],
 })
 </script>
 
@@ -83,8 +84,8 @@ useHead({
       <div class="links">
         <a
           v-for="(link, key) in links"
-          target="_blank"
           :key="key"
+          target="_blank"
           :href="link.url"
           :title="link.title"
           :aria-label="link.title"

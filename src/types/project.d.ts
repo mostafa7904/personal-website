@@ -26,5 +26,5 @@ export declare interface Project {
 
 export enum SourceTypes {
   GITHUB,
-  GITLAB
+  GITLAB,
 }
