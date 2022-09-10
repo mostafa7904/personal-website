@@ -11,14 +11,15 @@ export const useProjectsStore = defineStore('projects', {
   actions: {
     async getProjects() {
       const [client] = useContentFul()
-      const entriesRes: EntryCollection<ProjectEntry> = await client.getEntries(
+      const projectEntries: EntryCollection<ProjectEntry> = await client.getEntries(
         {
           content_type: 'projects',
           order: 'fields.order',
         },
       )
 
-      const [entries]: any = useContentfulPresenter<ProjectEntry>(entriesRes)
+      const [entries]: any = useContentfulPresenter<ProjectEntry>(projectEntries)
+
       this.$patch({
         projects: entries,
       })
